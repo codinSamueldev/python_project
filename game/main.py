@@ -15,7 +15,7 @@ def get_user_choice():
 def determine_winner(user, computer):
     """Determine the winner for a round."""
     if user == computer:
-        return "It's a tie!", False
+        return "It's a tie!", None
     elif (user == "scissors" and computer == "paper") or (user == "rock" and computer == "scissors") or (user == "paper" and computer == "rock"):
         return f"You have won this round! {user} beats {computer}!", True
     else:
@@ -31,7 +31,7 @@ def run_game():
     print("The game will start now.")
     print("*" * 15)
 
-    while rounds > 0:
+    while rounds >= 0:
         computer = get_computer_choice()
         user = get_user_choice()
 
@@ -40,10 +40,11 @@ def run_game():
 
         rounds -= 1
 
-        if user_won:
-            user_wins += 1
-        else:
-            computer_wins += 1
+        if user_won is not None:
+            if user_won:
+                user_wins += 1
+            else:
+                computer_wins += 1
 
     print("\nGame Over!")
     if user_wins == computer_wins:
