@@ -10,7 +10,7 @@ python3 main.py
 
 # App steps
 
-Here is how you can run the world population app.
+Here is how you can run the world population app. You need to create your own virtual environment, install depencies, and create two new directories in the imgs/ dir. Lastly, now you are ready to run the app ;D
 
 ```sh
 git clone https://github.com/codinSamueldev/python_project.git
@@ -19,7 +19,9 @@ cd environment/
 python3 -m venv name_of_your_environment
 source env/bin/activate
 pip install -r requirements.txt
-python3 main.py
 cd ..
 cd imgs/
+mkdir bar_charts && mkdir pie_charts
+cd ..
+python3 main.py
 ```
