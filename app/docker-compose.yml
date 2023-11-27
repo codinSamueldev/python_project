@@ -1,0 +1,8 @@
+services:
+  app-csv:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #Automatizar la vinculación de archivos.
+    volumes:
+      - .:/app
